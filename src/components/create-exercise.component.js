@@ -4,15 +4,6 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
-// export default class CreateExercise extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 you are on the Create Exercise Component
-//             </div>
-//         )
-//     }
-// }
 const CreateExercise = props => {
     const [exercise, setExercise] = useState({
         description: '',

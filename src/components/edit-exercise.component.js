@@ -16,8 +16,11 @@ const EditExercise = props => {
 
     useEffect(()=>{ 
       const fetchData = async () =>{
-        const users = await axios('http://localhost:5000/users/');
-        const exerciseResult = await axios.get('http://localhost:5000/exercises/'+props.match.params.id);
+        const users = axios.get('http://localhost:5000/users/');
+        const exerciseResult = axios.get('http://localhost:5000/exercises/'+props.match.params.id);
+        await users;
+        await exerciseResult;
+        
         setExercise({
             users: users.data.map(user => user.username),
             username: exerciseResult.data.username,
